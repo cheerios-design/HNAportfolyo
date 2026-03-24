@@ -4,3 +4,6 @@ education/
 
 *.pdf
 !docs/site-accounting-app-report.pdf
+
+# Local Netlify folder
+.netlify

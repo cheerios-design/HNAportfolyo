@@ -107,6 +107,16 @@ section {
     scroll-margin-top: var(--header-offset);
 }
 
+/* Large sections align a bit higher on anchor navigation. */
+#Home {
+    scroll-margin-top: 72px;
+}
+
+#Skills,
+#Experience {
+    scroll-margin-top: 45px;
+}
+
 section h1 {
     font-size: 3em;
     margin-bottom: 15px;
@@ -145,7 +155,7 @@ section p {
 
 /* ========== Home Section ========== */
 #Home {
-    min-height: 80vh;
+    min-height: 92vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

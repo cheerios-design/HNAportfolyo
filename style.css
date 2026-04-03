@@ -437,6 +437,7 @@ section p {
 
 .experience-card p {
     color: var(--text-light);
+    font-size: 0.95em;
     line-height: 1.6;
     margin: 6px 0 0;
 }

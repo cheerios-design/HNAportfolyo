@@ -716,15 +716,21 @@ body.light-mode #Home {
 }
 
 body.light-mode #About,
-body.light-mode #Projects,
-body.light-mode #Contact {
+body.light-mode #Projects {
     background: #f4f4f5;
 }
 
-body.light-mode #Skills,
-body.light-mode #Experience,
-body.light-mode #Comments {
+body.light-mode #Contact {
     background: #ffffff;
+}
+
+body.light-mode #Skills,
+body.light-mode #Experience {
+    background: #ffffff;
+}
+
+body.light-mode #Comments {
+    background: #f4f4f5;
 }
 
 body.light-mode #Skills::after,
@@ -756,6 +762,10 @@ body.light-mode .contact-info p {
 body.light-mode .contact-card:hover {
     background: #fff8ec;
     border-color: #bc7c0e;
+}
+
+body.light-mode footer {
+    background: #f4f4f5;
 }
 
 /* ========== Footer ========== */

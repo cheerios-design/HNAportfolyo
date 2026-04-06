@@ -501,6 +501,7 @@ section p {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 40px;
+    align-items: start;
 }
 
 .comment-card {
@@ -547,6 +548,16 @@ section p {
     margin-bottom: 20px;
 }
 
+.comment-avatar {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+}
+
 .comment-header i {
     font-size: 3em;
     background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
@@ -576,6 +587,34 @@ section p {
     line-height: 1.7;
     font-style: italic;
     margin: 0;
+}
+
+.more-text {
+    display: block;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.45s ease, opacity 0.35s ease;
+}
+
+.card-description.expanded .more-text {
+    max-height: 300px;
+    opacity: 1;
+}
+
+.read-more-btn {
+    margin-top: 10px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--accent-color);
+    font-size: 0.95em;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.read-more-btn:hover {
+    color: var(--accent-light);
 }
 
 .comment-rating {

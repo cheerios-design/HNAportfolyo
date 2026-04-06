@@ -173,6 +173,25 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// ========== 8. TESTIMONIAL READ MORE ==========
+const readMoreButtons = document.querySelectorAll('.read-more-btn');
+
+readMoreButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const description = this.parentElement;
+        const hiddenText = description.querySelector('.more-text');
+
+        if (!hiddenText) {
+            return;
+        }
+
+        const isExpanded = description.classList.contains('expanded');
+        description.classList.toggle('expanded', !isExpanded);
+        this.textContent = isExpanded ? 'Read more' : 'Read less';
+        this.setAttribute('aria-expanded', String(!isExpanded));
+    });
+});
+
 // ========== Console Mesajı ==========
 console.log('🎨 Portfolio Website - Hasibe Nida Akdoğan');
 console.log('✨ All JavaScript features loaded successfully!');

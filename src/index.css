@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0c1e3e;
+  --color-secondary: hsl(222, 68%, 19%);
+  --color-accent: #BC7C0E;
+  --color-accent-light: #D4A24B;
+  --color-dark-bg: #0a0a0a;
+  --color-darker-bg: #000000;
+  --color-card-bg: #1a1a1a;
+  --color-card-hover-bg: #252525;
+  --color-text-light: #a1a1aa;
+  --color-text-lighter: #d4d4d8;
+  --color-border-color: #2a2a2a;
+}
+
+@layer base {
+  body {
+    @apply bg-dark-bg text-white font-sans;
+  }
+}

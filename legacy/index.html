@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hasibe Nida Akdoğan - Math & Computer Programming | Software Development & Data">
+    <meta name="author" content="Hasibe Nida Akdoğan">
+    <meta name="keywords" content="Mathematics Student, Web Developer, Portfolio, Düzce, Nida Akdoğan">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Hasibe Nida Akdoğan - Portfolio</title>
+</head>
+
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Skills">Skills</a></li>
+                <li><a href="#Projects">Projects</a></li>
+                <li><a href="#Experience">Experience</a></li>
+                <li><a href="#Comments">Testimonials</a></li>
+                <li><a href="#Contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="Home">
+        <div class="profile-picture">
+            <img src="img/nida.jpeg" alt="Hasibe Nida Akdoğan">
+        </div>
+        <h1>Hasibe Nida Akdoğan</h1>
+        <p class="title">Math & Computer Programming | Software Development & Data</p>
+        <p>I build data-driven and user-focused software solutions by combining mathematical thinking with practical
+            development skills.</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="About">
+        <h2>About Me</h2>
+        <p>I am a senior Mathematics (English) student at Bolu Abant Izzet Baysal University and a Computer Programming
+            graduate. I combine mathematical thinking with software skills to solve problems analytically.</p>
+        <p>My core expertise lies in Python, with hands-on experience in 3D data processing (VTK, Vedo) and AI data
+            annotation at Bilişim Vadisi. I also have a strong background in web design (HTML, CSS, CMS) from my time at
+            Serbay, where I bridged the gap between complex data and user-centric design. Alongside my technical
+            projects, my 3-year background in accounting has strengthened my attention to detail and data integrity. I
+            am also proficient in PostgreSQL and have experience with C#.</p>
+        <p>As the Software & Technical Team Lead at GDG on Campus, I coordinate projects and mentor developers. I am
+            driven by a passion for technology, aiming to deliver robust, data-driven solutions in software and data
+            science.</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="Skills">
+        <h2>Technical Skills</h2>
+        <p>Technologies and tools I work with</p>
+        <div class="skills-container">
+            <div class="skill-card">
+                <i class="fas fa-code"></i>
+                <h3>Programming</h3>
+                <p>Python, C#, JavaScript, SQL, CSS</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Web Development</h3>
+                <p>HTML, CSS, CMS, Responsive Design, Git, GitHub</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-database"></i>
+                <h3>Database</h3>
+                <p>PostgreSQL, Database Management, Data Integrity, Reporting</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-cube"></i>
+                <h3>3D Data Processing</h3>
+                <p>VTK, Vedo, Data Visualization</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-calculator"></i>
+                <h3>Mathematics</h3>
+                <p>Mathematical Modeling, Analytics, Analytical Thinking, Problem Solving</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-users"></i>
+                <h3>Team Leadership</h3>
+                <p>Project Coordination, Mentoring, Communication, Team Collaboration</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="Projects">
+        <h2>Projects</h2>
+        <p>Some of my recent work</p>
+        <div class="projects-container">
+            <div class="project-card no-image">
+                <div class="overlay">
+                    <h3>Site Accounting App</h3>
+                    <p>A professional accounting interface for residential site/building management, developed with
+                        Python, Streamlit, and PostgreSQL. It manages dues, fuel, and carry-over debts with block-based
+                        tracking, FIFO-based collection logic, and automated receipt generation. The project also
+                        supports CSV import and follows a modular architecture for scalability and maintainability.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/nidakd/site-accounting-app" target="_blank"
+                            rel="noopener noreferrer" class="project-link">View Project -></a>
+                        <a href="docs/site-accounting-app-report.pdf" class="project-link" download>Download PDF Report
+                            -></a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card no-image">
+                <div class="overlay">
+                    <h3>LTS Alpha Core</h3>
+                    <p>LTS Alpha Core is a platform-agnostic autonomous trading system built in Python, designed to work
+                        with brokers like MT5, Binance, and paper trading environments. The project includes a modular
+                        architecture with broker interfaces, strategy layers, market data models, and a simulation-ready
+                        PaperBroker for risk-free testing. It is currently in active alpha development with planned
+                        Telegram control, web admin panel, and multi-broker expansion.</p>
+                    <a href="https://github.com/nidakd/LTSAlphaCore" target="_blank" rel="noopener noreferrer"
+                        class="project-link">View Project (Private) -></a>
+                </div>
+            </div>
+            <div class="project-card no-image">
+                <div class="overlay">
+                    <h3>Product Stock Management</h3>
+                    <p>A full-stack inventory management platform built with .NET Web API, React, and PostgreSQL. It
+                        provides a responsive dashboard for managing products through CRUD operations, search
+                        functionality, validation, logging, and automatic database setup. The project follows a clean
+                        architecture with a focus on maintainability, usability, and real-world application flow.</p>
+                    <a href="https://github.com/nidakd/product-stock-api" target="_blank" rel="noopener noreferrer"
+                        class="project-link">View Project -></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="Experience">
+        <h2>Experience</h2>
+        <p>My professional journey</p>
+        <div class="experience-container">
+            <div class="experience-card">
+                <h3>Mathematics Student</h3>
+                <div class="company">Abant Izzet Baysal University / Bachelor's Degree</div>
+                <div class="date">Senior Year</div>
+                <p>Currently pursuing Bachelor's degree in Mathematics (English). Specializing in mathematical modeling,
+                    analytics, and computational mathematics.</p>
+            </div>
+            <div class="experience-card">
+                <h3>Software & Technical Team Lead</h3>
+                <div class="company">GDG on Campus - Bolu Abant Izzet Baysal University</div>
+                <div class="date">Sep 2025 - Present</div>
+                <p>As the Software and Technical Lead, I coordinate the development lifecycles of technical projects and
+                    provide mentorship to team members in software development. I drive the organization of hands-on
+                    workshops and coding events while actively fostering the growth of a collaborative,
+                    learning-oriented developer community.</p>
+            </div>
+            <div class="experience-card">
+                <h3>Site Accountant</h3>
+                <div class="company">Residential Site Management</div>
+                <div class="date">2022 - Present</div>
+                <p>Managing comprehensive financial operations for a residential complex using advanced Excel systems to
+                    track income, expenses, and resident payments. I oversee all utility billing and account
+                    transactions with high precision, ensuring fiscal integrity through structured reporting and
+                    data-driven budget management to provide full financial transparency.</p>
+            </div>
+            <div class="experience-card">
+                <h3>Web Design Intern</h3>
+                <div class="company">Serbay //</div>
+                <div class="date">Jan 2026 - Feb 2026</div>
+                <p>Contributed to the development of CMS-based websites by structuring layouts with HTML and
+                    implementing visual designs through CSS. I specialized in sourcing and optimizing high-quality
+                    digital assets and vector graphics, ensuring brand consistency through mockup adjustments and UI
+                    refinements. Additionally, I managed content administration and site optimization via management
+                    panels, gaining hands-on experience in the end-to-end web production lifecycle and strengthening my
+                    core front-end development competencies.</p>
+            </div>
+            <div class="experience-card">
+                <h3>Computer Programming Graduate</h3>
+                <div class="company">Anadolu University / Associate Degree</div>
+                <div class="date">Graduated · 2026</div>
+                <p>Completed Computer Programming associate degree with a strong focus on SQL and Python, including
+                    database design, query optimization, and data-driven application development.</p>
+            </div>
+            <div class="experience-card">
+                <h3>Software Development Intern</h3>
+                <div class="company">Armada Yazilim / Bilisim Vadisi</div>
+                <div class="date">Aug 2025 - Sep 2025</div>
+                <p>Focused on 3D intraoral scan data to support the training of artificial intelligence models, taking
+                    an active role in data annotation and preprocessing through tooth-based color coding on 3D meshes.
+                    Developed technical expertise in mesh structures and 3D segmentation by utilizing specialized Python
+                    visualization libraries such as VTK and Vedo. Throughout the process, I maintained version control
+                    via Git and contributed to model development through rigorous technical research and data pipeline
+                    optimization.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comments Section -->
+    <section id="Comments">
+        <h2>Testimonials</h2>
+        <p>What people say about my work</p>
+        <div class="comment-container">
+            <div class="comment-card">
+                <div class="comment-header">
+                    <img class="comment-avatar" src="img/özkangozutok.jpg" alt="Ozkan Gozutok">
+                    <div class="commenter-info">
+                        <h4>Ozkan GOZUTOK</h4>
+                        <p class="comment-role">Partner & Creative Director, Serbay<br>Specialist in Digital Strategy
+                        </p>
+                    </div>
+                </div>
+                <div class="card-description">
+                    <p>"During her internship in our web department, Nida distinguished herself as a disciplined and
+                        analytically-minded teammate. Her sense of ownership over assigned tasks and her
+                        solution-oriented approach enabled her to adapt to our processes in a very short time.<span
+                            class="more-text"> Her seamless integration into the team and positive attitude
+                            significantly contributed not only to her individual performance but also to the overall
+                            team dynamics. Given her openness to growth and strong motivation to learn, I am confident
+                            she will achieve great success in her future professional endeavors.</span>"</p>
+                    <button class="read-more-btn" type="button" aria-expanded="false">Read more</button>
+                </div>
+                <div class="comment-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="comment-card">
+                <div class="comment-header">
+                    <i class="fas fa-user-circle"></i>
+                    <div class="commenter-info">
+                        <h4>Asst. Prof. Dr. Sibel CANSU</h4>
+                        <p class="comment-role">Mathematics Department, BAIBU<br>Specialist in Algebra & Computer
+                            Science</p>
+                    </div>
+                </div>
+                <div class="card-description">
+                    <p>"Nida is a student who stands out with her strong work ethic and analytical thinking skills, and
+                        she demonstrates remarkable competence in the field of programming. Her eagerness to grow and
+                        productive approach make her a promising individual likely to succeed in future projects."</p>
+                </div>
+                <div class="comment-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <div class="comment-card">
+                <div class="comment-header">
+                    <i class="fas fa-user-circle"></i>
+                    <div class="commenter-info">
+                        <h4>Sam DARAMROEI</h4>
+                        <p class="comment-role">Founder, Cheerio Studios</p>
+                    </div>
+                </div>
+                <div class="card-description">
+                    <p>"Working with Nida is one of the best experiences you could have as an entrepreneur. She understands your data and works in the best way possible to utilize them for your success!"</p>
+                </div>
+                <div class="comment-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="Contact">
+        <h2>Get In Touch</h2>
+        <p>Let's connect and collaborate</p>
+        <div class="contact-container">
+            <a href="https://www.linkedin.com/in/nida-akdo%C4%9Fan-2b72b429a/" target="_blank" rel="noopener noreferrer"
+                class="contact-card">
+                <i class="fab fa-linkedin"></i>
+                <div class="contact-info">
+                    <h3>LinkedIn</h3>
+                    <p>Connect with me</p>
+                </div>
+            </a>
+            <a href="https://github.com/nidakd" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <i class="fab fa-github"></i>
+                <div class="contact-info">
+                    <h3>GitHub</h3>
+                    <p>View my projects</p>
+                </div>
+            </a>
+            <a href="https://www.instagram.com/hnidakd/" target="_blank" rel="noopener noreferrer" class="contact-card">
+                <i class="fab fa-instagram"></i>
+                <div class="contact-info">
+                    <h3>Instagram</h3>
+                    <p>@hnidakd</p>
+                </div>
+            </a>
+            <a href="mailto:hasibenidaakdogan@gmail.com" class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <div class="contact-info">
+                    <h3>Email</h3>
+                    <p>hasibenidaakdogan@gmail.com</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Hasibe Nida Akdoğan. All rights reserved.</p>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Dark Mode Toggle -->
+    <button id="darkModeToggle" class="dark-mode-toggle" title="Toggle dark/light mode">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

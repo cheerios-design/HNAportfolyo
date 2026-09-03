@@ -176,7 +176,7 @@ section p {
     z-index: 0;
 }
 
-#Home > * {
+#Home>* {
     position: relative;
     z-index: 1;
 }
@@ -836,31 +836,31 @@ footer p {
     section h1 {
         font-size: 2em;
     }
-    
+
     section h2 {
         font-size: 1.8em;
     }
-    
+
     .navbar ul {
         flex-direction: row;
         gap: 5px;
     }
-    
+
     .navbar ul li a {
         padding: 8px 15px;
         font-size: 14px;
     }
-    
+
     section {
         padding: 60px 15px;
     }
-    
+
     .skills-container,
     .projects-container,
     .experience-container {
         grid-template-columns: 1fr;
     }
-    
+
     .profile-picture img {
         width: 150px;
         height: 150px;
@@ -871,11 +871,11 @@ footer p {
     section h1 {
         font-size: 1.8em;
     }
-    
+
     section h2 {
         font-size: 1.5em;
     }
-    
+
     .title {
         font-size: 1.1em;
     }
@@ -887,6 +887,7 @@ footer p {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);

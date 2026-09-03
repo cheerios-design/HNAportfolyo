@@ -1,12 +1,12 @@
 // ========== 1. SMOOTH SCROLL ==========
 // Navbar linklerine tıklandığında yumuşak kaydırma
 document.querySelectorAll('.navbar a[href^="#"]').forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
         e.preventDefault();
-        
+
         const targetId = this.getAttribute('href');
         const targetSection = document.querySelector(targetId);
-        
+
         if (targetSection) {
             targetSection.scrollIntoView({
                 behavior: 'smooth',
@@ -23,22 +23,22 @@ const navLinks = document.querySelectorAll('.navbar a[href^="#"]');
 
 function setActiveNav() {
     let currentSection = '';
-    
+
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        
+
         // Eğer scroll pozisyonu bu section'ın içindeyse
         if (window.scrollY >= sectionTop - 150) {
             currentSection = section.getAttribute('id');
         }
     });
-    
+
     // Tüm linklerdeki aktif sınıfını kaldır ve smooth transition ekle
     navLinks.forEach(link => {
         link.style.transition = 'color 0.5s ease, transform 0.3s ease';
         link.classList.remove('active');
-        
+
         // Eğer link bu section'a aitse aktif yap
         if (link.getAttribute('href') === `#${currentSection}`) {
             link.classList.add('active');
@@ -54,7 +54,7 @@ window.addEventListener('load', setActiveNav);
 const scrollToTopBtn = document.getElementById('scrollToTop');
 
 // Sayfa 300px aşağı inince butonu göster
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     if (window.scrollY > 300) {
         scrollToTopBtn.classList.add('show');
     } else {
@@ -63,7 +63,7 @@ window.addEventListener('scroll', function() {
 });
 
 // Butona tıklandığında yukarı çık
-scrollToTopBtn.addEventListener('click', function() {
+scrollToTopBtn.addEventListener('click', function () {
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
@@ -82,9 +82,9 @@ if (currentTheme === 'light') {
 }
 
 // Dark/Light mode değiştir
-darkModeToggle.addEventListener('click', function() {
+darkModeToggle.addEventListener('click', function () {
     body.classList.toggle('light-mode');
-    
+
     // Icon'u değiştir
     if (body.classList.contains('light-mode')) {
         darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
@@ -125,7 +125,7 @@ const observerOptions = {
     rootMargin: '0px 0px -50px 0px'
 };
 
-const cardObserver = new IntersectionObserver(function(entries, observer) {
+const cardObserver = new IntersectionObserver(function (entries, observer) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
@@ -147,12 +147,12 @@ cards.forEach(card => {
 const projectCards = document.querySelectorAll('.project-card');
 
 projectCards.forEach(card => {
-    card.addEventListener('click', function(e) {
+    card.addEventListener('click', function (e) {
         // Eğer link'e tıklanmadıysa
         if (!e.target.closest('.project-link')) {
             // Kartı büyüt ve detay göster efekti
             this.style.transform = this.style.transform === 'scale(1.02)' ? 'scale(1)' : 'scale(1.02)';
-            
+
             // 300ms sonra eski haline döndür
             setTimeout(() => {
                 this.style.transform = 'scale(1)';
@@ -165,7 +165,7 @@ projectCards.forEach(card => {
 // Scroll olunca navbar'a hafif background ekle
 const header = document.querySelector('header');
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
     if (window.scrollY > 50) {
         header.style.boxShadow = 'var(--shadow-md)';
     } else {
@@ -177,7 +177,7 @@ window.addEventListener('scroll', function() {
 const readMoreButtons = document.querySelectorAll('.read-more-btn');
 
 readMoreButtons.forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
         const description = this.parentElement;
         const hiddenText = description.querySelector('.more-text');
 

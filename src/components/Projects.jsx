@@ -27,23 +27,9 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="Projects" className="py-20 px-5 text-center bg-[var(--color-darker-bg)] relative scroll-mt-2">
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-4xl font-bold mb-4 text-white relative inline-block after:content-[''] after:absolute after:-bottom-2.5 after:left-1/2 after:-translate-x-1/2 after:w-[60px] after:h-1 after:bg-gradient-to-r after:from-[var(--color-accent)] after:to-[var(--color-accent-light)] after:rounded-sm">
-            Projects
-          </h2>
-          <p className="text-[var(--color-text-light)] text-lg max-w-3xl mx-auto mt-6 mb-10">
-            Some of my recent work
-          </p>
-        </motion.div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+    <section id="Projects" className="py-24 px-6 lg:px-12 text-center bg-[var(--color-darker-bg)] relative scroll-mt-2">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -51,15 +37,15 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -6 }}
-              className="group relative bg-[var(--color-card-bg)] rounded-2xl shadow-md border border-[var(--color-border-color)] overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-[var(--color-accent)] text-left min-h-[290px] flex flex-col"
+              whileHover={{ y: -10 }}
+              className="group relative bg-[var(--color-card-bg)] rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] text-left min-h-[450px] flex flex-col border border-[var(--color-border-color)] hover:border-[var(--color-accent)]"
             >
-              <div className="p-6 flex flex-col h-full bg-[var(--color-card-bg)] relative z-10">
-                <h3 className="text-xl font-semibold text-white mb-3">{project.title}</h3>
+              <div className="p-8 flex flex-col h-full relative z-10">
+                <h3 className="text-2xl font-medium text-white mb-4">{project.title}</h3>
                 <p className="text-[var(--color-text-light)] text-sm leading-relaxed flex-grow">
                   {project.desc}
                 </p>
-                <div className="flex flex-wrap gap-4 mt-4">
+                <div className="flex flex-col gap-3 mt-6">
                   {project.links.map((link, i) => (
                     <a
                       key={i}
@@ -67,7 +53,7 @@ const Projects = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       download={link.download}
-                      className="inline-block text-[var(--color-accent)] font-semibold text-sm hover:text-[var(--color-accent-light)] transition-colors duration-300"
+                      className="inline-flex items-center text-white font-medium text-sm hover:text-[var(--color-accent)] transition-colors duration-300"
                     >
                       {link.text}
                     </a>
@@ -78,9 +64,6 @@ const Projects = () => {
           ))}
         </div>
       </div>
-      
-      {/* Bottom Glow Line */}
-      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(188,124,14,0.3)] to-transparent"></div>
     </section>
   );
 };

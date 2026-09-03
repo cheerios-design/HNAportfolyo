@@ -1,56 +1,69 @@
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 
 const Home = () => {
   return (
-    <section id="Home" className="min-h-[92vh] flex flex-col justify-center items-center relative py-20 px-5 text-center scroll-mt-[72px] bg-[var(--color-darker-bg)]">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 z-0 opacity-30" style={{ backgroundImage: 'url("data:image/svg+xml,<svg width=\'100\' height=\'100\' xmlns=\'http://www.w3.org/2000/svg\'><circle cx=\'50\' cy=\'50\' r=\'2\' fill=\'rgba(188,124,14,0.06)\'/></svg>")' }}></div>
-      
-      <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center">
-        <motion.div 
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mb-8"
-        >
+    <section id="Home" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[var(--color-darker-bg)] scroll-mt-[72px]">
+      {/* Background Image with Gradient Fade */}
+      <div className="absolute inset-0 z-0 flex justify-center">
+        <div className="relative w-full max-w-[1200px] h-full">
           <img 
             src="/img/nida.jpeg" 
             alt="Hasibe Nida Akdoğan" 
-            className="w-[180px] h-[180px] rounded-full border-[5px] border-[var(--color-accent)] shadow-xl object-cover transition-all duration-400 hover:scale-110 hover:shadow-[0_25px_50px_rgba(188,124,14,0.6)]"
+            className="w-full h-[80vh] object-cover object-top opacity-30 mask-image-gradient"
+            style={{
+              WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 80%)',
+              maskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 80%)'
+            }}
           />
-        </motion.div>
-        
-        <motion.h1 
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-light)] bg-clip-text text-transparent"
-        >
-          Hasibe Nida Akdoğan
-        </motion.h1>
-        
-        <motion.p 
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-lg sm:text-xl text-[var(--color-accent)] font-semibold mb-5 tracking-wide"
-        >
-          Math & Computer Programming | Software Development & Data
-        </motion.p>
-        
-        <motion.p 
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="text-lg text-[var(--color-text-light)] max-w-2xl mx-auto leading-relaxed"
-        >
-          I build data-driven and user-focused software solutions by combining mathematical thinking with practical
-          development skills.
-        </motion.p>
+          <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[var(--color-darker-bg)] to-transparent"></div>
+        </div>
       </div>
-      
-      {/* Bottom Glow Line */}
-      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(188,124,14,0.3)] to-transparent"></div>
+
+      {/* Content */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 pt-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end mb-8">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
+            <div className="inline-flex items-center gap-2 bg-[var(--color-card-bg)] border border-[var(--color-border-color)] rounded-full py-1.5 px-3 text-xs font-medium text-[var(--color-text-light)]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] animate-pulse"></span>
+              Available for Work
+            </div>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-medium leading-tight text-white">
+              Math & Computer Programming |<br />
+              Software Development & Data
+            </h1>
+          </motion.div>
+          
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-col md:items-end space-y-6 text-left md:text-right"
+          >
+            <p className="text-[var(--color-text-light)] text-sm md:text-base max-w-sm">
+              I build data-driven and user-focused software solutions by combining mathematical thinking with practical development skills.
+            </p>
+            <a href="#Projects" className="inline-flex items-center gap-3 bg-[var(--color-accent)] hover:bg-[var(--color-accent-light)] transition-colors text-white rounded-full py-2.5 px-6 font-medium text-sm w-fit shadow-[0_0_20px_rgba(255,102,51,0.3)]">
+              <span className="bg-white text-[var(--color-accent)] rounded-full p-1">
+                <ArrowRight className="w-4 h-4" />
+              </span>
+              See my works
+            </a>
+          </motion.div>
+        </div>
+
+        {/* Huge Name */}
+        <div className="w-full flex justify-center -mt-4 md:-mt-12 lg:-mt-20">
+          <h2 className="text-[14vw] font-bold tracking-tighter leading-none select-none drop-shadow-2xl text-white">
+            Hasibe Nida
+          </h2>
+        </div>
+      </div>
     </section>
   );
 };

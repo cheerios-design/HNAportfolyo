@@ -56,7 +56,7 @@ const Experience = () => {
             My professional journey
           </p>
         </motion.div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
           {experiences.map((exp, index) => (
             <motion.div
@@ -70,7 +70,7 @@ const Experience = () => {
             >
               {/* Top highlight bar */}
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-light)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-              
+
               <h3 className="text-xl font-semibold text-white mb-1.5">{exp.title}</h3>
               <div className="text-[var(--color-accent)] font-semibold mb-1.5">{exp.company}</div>
               <div className="text-[var(--color-text-light)] text-sm italic mb-3">{exp.date}</div>
@@ -81,7 +81,7 @@ const Experience = () => {
           ))}
         </div>
       </div>
-      
+
       {/* Bottom Glow Line */}
       <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(188,124,14,0.5)] to-transparent"></div>
     </section>

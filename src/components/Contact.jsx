@@ -45,7 +45,7 @@ const Contact = () => {
             Let's connect and collaborate
           </p>
         </motion.div>
-        
+
         <div className="flex flex-wrap justify-center gap-8 mt-10">
           {contacts.map((contact, index) => {
             const Icon = contact.icon;
@@ -72,7 +72,7 @@ const Contact = () => {
           })}
         </div>
       </div>
-      
+
       <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(188,124,14,0.3)] to-transparent"></div>
     </section>
   );

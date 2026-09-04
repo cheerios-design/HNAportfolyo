@@ -5,7 +5,7 @@ const About = () => {
   return (
     <section id="About" className="py-24 px-6 lg:px-12 max-w-7xl mx-auto flex justify-end scroll-mt-2">
       <div className="w-full md:w-3/4 lg:w-2/3 space-y-8 text-left">
-        <motion.h2 
+        <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
@@ -14,7 +14,7 @@ const About = () => {
         >
           Combining mathematical thinking with software skills to solve problems analytically.
         </motion.h2>
-        
+
         <div className="space-y-4">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -26,7 +26,7 @@ const About = () => {
             I am a senior Mathematics (English) student at Bolu Abant Izzet Baysal University and a Computer Programming
             graduate. I combine mathematical thinking with software skills to solve problems analytically.
           </motion.p>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +40,7 @@ const About = () => {
             projects, my 3-year background in accounting has strengthened my attention to detail and data integrity. I
             am also proficient in PostgreSQL and have experience with C#.
           </motion.p>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

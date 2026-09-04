@@ -41,7 +41,7 @@ const TestimonialCard = ({ testimonial, index }) => {
       className="group relative bg-[var(--color-card-bg)] p-6 rounded-2xl shadow-md border border-[var(--color-border-color)] overflow-hidden transition-all duration-300 hover:shadow-xl hover:bg-[var(--color-card-hover-bg)] hover:border-[var(--color-accent)] text-left min-h-[290px] flex flex-col"
     >
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-light)] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
-      
+
       <div className="flex items-center gap-4 mb-5">
         {testimonial.img ? (
           <img src={testimonial.img} alt={testimonial.name} className="w-[68px] h-[68px] rounded-full object-cover shrink-0 border-2 border-[var(--color-accent)] shadow-md" />
@@ -53,7 +53,7 @@ const TestimonialCard = ({ testimonial, index }) => {
           <p className="text-[0.9em] text-[var(--color-accent)] whitespace-pre-line">{testimonial.role}</p>
         </div>
       </div>
-      
+
       <div className="my-5 flex-grow">
         <p className="text-[var(--color-text-light)] leading-relaxed italic">
           {testimonial.text}
@@ -64,7 +64,7 @@ const TestimonialCard = ({ testimonial, index }) => {
           )}
         </p>
         {testimonial.moreText && (
-          <button 
+          <button
             onClick={() => setExpanded(!expanded)}
             className="mt-2 text-[var(--color-accent)] text-sm font-semibold hover:text-[var(--color-accent-light)] transition-colors focus:outline-none"
           >
@@ -72,7 +72,7 @@ const TestimonialCard = ({ testimonial, index }) => {
           </button>
         )}
       </div>
-      
+
       <div className="flex gap-1 mt-auto">
         {[...Array(testimonial.rating)].map((_, i) => (
           <Star key={i} size={18} className="fill-[var(--color-accent)] text-[var(--color-accent)]" />
@@ -99,14 +99,14 @@ const Testimonials = () => {
             What people say about my work
           </p>
         </motion.div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 items-start">
           {testimonials.map((testimonial, index) => (
             <TestimonialCard key={index} testimonial={testimonial} index={index} />
           ))}
         </div>
       </div>
-      
+
       <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(188,124,14,0.5)] to-transparent"></div>
     </section>
   );

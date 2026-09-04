@@ -13,7 +13,7 @@ const Navbar = () => {
 
       const sectionsElements = sections.map(id => document.getElementById(id));
       let current = '';
-      
+
       sectionsElements.forEach(section => {
         if (section) {
           const sectionTop = section.offsetTop;
@@ -27,7 +27,7 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScroll);
     handleScroll();
-    
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -39,11 +39,10 @@ const Navbar = () => {
             <li key={section}>
               <a
                 href={`#${section}`}
-                className={`inline-block px-3 py-2 rounded-lg text-sm sm:text-base font-medium transition-all duration-300 ${
-                  activeSection === section 
-                    ? 'text-[var(--color-accent)]' 
+                className={`inline-block px-3 py-2 rounded-lg text-sm sm:text-base font-medium transition-all duration-300 ${activeSection === section
+                    ? 'text-[var(--color-accent)]'
                     : 'text-white hover:text-[var(--color-accent)] hover:-translate-y-[2px]'
-                }`}
+                  }`}
                 onClick={(e) => {
                   e.preventDefault();
                   document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });

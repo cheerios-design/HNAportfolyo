@@ -9,7 +9,6 @@ import Experience from './components/Experience'
 import Testimonials from './components/Testimonials'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import ThemeToggle from './components/ThemeToggle'
 import ScrollToTop from './components/ScrollToTop'
 
 function App() {
@@ -28,7 +27,6 @@ function App() {
       </main>
       <Footer />
       <ScrollToTop />
-      <ThemeToggle />
     </div>
   )
 }

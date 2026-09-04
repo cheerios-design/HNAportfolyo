@@ -7,9 +7,9 @@ const Home = () => {
       {/* Background Image with Gradient Fade */}
       <div className="absolute inset-0 z-0 flex justify-center">
         <div className="relative w-full max-w-[1200px] h-full">
-          <img 
-            src="/img/nida.jpeg" 
-            alt="Hasibe Nida Akdoğan" 
+          <img
+            src="/img/nida.jpeg"
+            alt="Hasibe Nida Akdoğan"
             className="w-full h-[80vh] object-cover object-top opacity-30 mask-image-gradient"
             style={{
               WebkitMaskImage: 'radial-gradient(ellipse at center, rgba(0,0,0,1) 30%, rgba(0,0,0,0) 80%)',
@@ -23,7 +23,7 @@ const Home = () => {
       {/* Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-12 pt-32">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-end mb-8">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -38,8 +38,8 @@ const Home = () => {
               Software Development & Data
             </h1>
           </motion.div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}

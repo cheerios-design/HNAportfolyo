@@ -355,7 +355,7 @@ export const StaggeredMenu = ({
 
   return (
     <div
-      className={`sm-scope z-[99] ${isFixed ? 'fixed top-0 left-0 w-screen h-screen overflow-hidden pointer-events-none' : 'w-full h-full'}`}
+      className={`sm-scope z-[99] ${isFixed ? 'fixed top-0 left-0 w-screen h-screen overflow-hidden pointer-events-none' : 'w-full h-full overflow-hidden'}`}
     >
       <div
         className={
@@ -438,7 +438,7 @@ export const StaggeredMenu = ({
         <aside
           id="staggered-menu-panel"
           ref={panelRef}
-          className="staggered-menu-panel absolute top-0 right-0 h-full bg-[#101010] flex flex-col p-[6em_2em_2em_2em] overflow-y-auto z-10 pointer-events-auto translate-x-full"
+          className="staggered-menu-panel absolute top-0 right-0 h-full w-full max-w-[420px] bg-[#101010] flex flex-col p-[6em_2em_2em_2em] overflow-y-auto overflow-x-hidden z-10 pointer-events-auto translate-x-full"
           aria-hidden={!open}
         >
           <div className="sm-panel-inner flex-1 flex flex-col gap-5 mt-8">
@@ -495,11 +495,11 @@ export const StaggeredMenu = ({
 .sm-scope .sm-panel-itemWrap { position: relative; overflow: hidden; line-height: 1; }
 .sm-scope .sm-icon-line { position: absolute; left: 50%; top: 50%; width: 100%; height: 2px; background: currentColor; border-radius: 2px; transform: translate(-50%, -50%); will-change: transform; }
 .sm-scope .sm-line { display: none !important; }
-.sm-scope .staggered-menu-panel { position: absolute; top: 0; right: 0; width: 100%; height: 100%; display: flex; flex-direction: column; padding: 6em 2em 2em 2em; overflow-y: auto; z-index: 10; }
+.sm-scope .staggered-menu-panel { position: absolute; top: 0; right: 0; width: 100%; max-width: 420px; height: 100%; display: flex; flex-direction: column; padding: 6em 2em 2em 2em; overflow-y: auto; overflow-x: hidden; z-index: 10; }
 .sm-scope [data-position='left'] .staggered-menu-panel { right: auto; left: 0; }
-.sm-scope .sm-prelayers { position: absolute; top: 0; right: 0; bottom: 0; width: 100%; pointer-events: none; z-index: 5; }
+.sm-scope .sm-prelayers { position: absolute; top: 0; right: 0; bottom: 0; width: 100%; pointer-events: none; z-index: 5; overflow: hidden; }
 .sm-scope [data-position='left'] .sm-prelayers { right: auto; left: 0; }
-.sm-scope .sm-prelayer { position: absolute; top: 0; right: 0; height: 100%; width: 100%; transform: translateX(0); }
+.sm-scope .sm-prelayer { position: absolute; top: 0; right: 0; height: 100%; width: 100%; }
 .sm-scope .sm-panel-inner { flex: 1; display: flex; flex-direction: column; gap: 1.25rem; }
 .sm-scope .sm-panel-title { margin: 0; font-size: 1rem; font-weight: 600; color: #fff; text-transform: uppercase; }
 .sm-scope .sm-panel-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }

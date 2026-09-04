@@ -89,13 +89,13 @@ const Contact = () => {
             initial="hidden" whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
             whileHover={{ scale: 1.02 }}
-            className="col-span-1 md:col-span-3 row-span-1 flex flex-col md:flex-row items-start md:items-center justify-between bg-[var(--color-accent)] rounded-3xl p-6 md:p-8 group transition-all duration-300 no-underline gap-4"
+            className="col-span-2 md:col-span-3 row-span-1 flex flex-col md:flex-row items-start md:items-center justify-between bg-[var(--color-accent)] rounded-3xl p-6 md:p-8 group transition-all duration-300 no-underline gap-4"
           >
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-4 md:gap-5 min-w-0">
               <Mail size={36} className="text-black shrink-0 group-hover:scale-110 transition-transform duration-300" />
-              <div>
+              <div className="min-w-0">
                 <p className="text-black/60 text-xs mb-0.5 uppercase tracking-widest font-medium">Email me</p>
-                <h3 className="text-black text-xl font-bold">hasibenidaakdogan@gmail.com</h3>
+                <h3 className="text-black text-base sm:text-lg md:text-xl font-bold break-all">hasibenidaakdogan@gmail.com</h3>
               </div>
             </div>
             <span className="text-black font-semibold text-sm border border-black/30 rounded-full px-5 py-2 group-hover:bg-black group-hover:text-[var(--color-accent)] transition-colors duration-300 whitespace-nowrap">

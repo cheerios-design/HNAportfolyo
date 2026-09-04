@@ -66,12 +66,16 @@ const TimelineItem = ({ exp, index }) => {
           <span className="inline-block text-xs font-mono text-[var(--color-accent)] mb-2 tracking-widest uppercase">
             {exp.date}
           </span>
-          <div className="bg-[var(--color-card-bg)] border border-[var(--color-border-color)] rounded-2xl p-5 hover:border-[var(--color-accent)] transition-colors duration-300 group">
-            <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-[var(--color-accent)] to-transparent rounded-t-2xl scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-            <h3 className="text-base font-semibold text-white mb-0.5">{exp.title}</h3>
-            <div className="text-[var(--color-accent)] text-sm font-medium">{exp.company}</div>
-            {exp.subtitle && <div className="text-[var(--color-text-light)] text-xs mt-0.5">{exp.subtitle}</div>}
-            <p className="text-[var(--color-text-light)] text-xs leading-relaxed mt-3">{exp.desc}</p>
+          <div className={`border rounded-2xl p-5 transition-colors duration-300 group relative overflow-hidden ${
+            isLeft 
+              ? 'bg-[var(--color-card-bg)] border-[var(--color-border-color)] hover:border-[var(--color-accent)]' 
+              : 'bg-[var(--color-accent)] border-transparent'
+          }`}>
+            {isLeft && <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-[var(--color-accent)] to-transparent rounded-t-2xl scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />}
+            <h3 className={`text-base mb-0.5 ${isLeft ? 'font-semibold text-white' : 'font-bold text-black'}`}>{exp.title}</h3>
+            <div className={`text-sm ${isLeft ? 'text-[var(--color-accent)] font-medium' : 'text-black/60 font-semibold'}`}>{exp.company}</div>
+            {exp.subtitle && <div className={`text-xs mt-0.5 ${isLeft ? 'text-[var(--color-text-light)]' : 'text-black/50 font-medium'}`}>{exp.subtitle}</div>}
+            <p className={`text-xs leading-relaxed mt-3 ${isLeft ? 'text-[var(--color-text-light)]' : 'text-black/80'}`}>{exp.desc}</p>
           </div>
         </motion.div>
       </div>
@@ -126,12 +130,11 @@ const TimelineItem = ({ exp, index }) => {
               <span className="inline-block text-xs font-mono text-[var(--color-accent)] mb-3 tracking-widest uppercase">
                 {exp.date}
               </span>
-              <div className="group relative bg-[var(--color-card-bg)] border border-[var(--color-border-color)] rounded-2xl p-6 hover:border-[var(--color-accent)] transition-colors duration-300 text-left overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-[var(--color-accent)] to-transparent rounded-t-2xl scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-                <h3 className="text-base font-semibold text-white mb-0.5">{exp.title}</h3>
-                <div className="text-[var(--color-accent)] text-sm font-medium">{exp.company}</div>
-                {exp.subtitle && <div className="text-[var(--color-text-light)] text-xs mt-0.5">{exp.subtitle}</div>}
-                <p className="text-[var(--color-text-light)] text-xs leading-relaxed mt-3">{exp.desc}</p>
+              <div className="group relative bg-[var(--color-accent)] border border-transparent rounded-2xl p-6 transition-colors duration-300 text-left overflow-hidden">
+                <h3 className="text-base font-bold text-black mb-0.5">{exp.title}</h3>
+                <div className="text-black/60 text-sm font-semibold">{exp.company}</div>
+                {exp.subtitle && <div className="text-black/50 text-xs mt-0.5 font-medium">{exp.subtitle}</div>}
+                <p className="text-black/80 text-xs leading-relaxed mt-3">{exp.desc}</p>
               </div>
             </motion.div>
           )}

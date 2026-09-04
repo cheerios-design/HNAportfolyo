@@ -28,8 +28,20 @@ const projects = [
 const Projects = () => {
   return (
     <section id="Projects" className="py-24 px-6 lg:px-12 text-center bg-[var(--color-darker-bg)] relative scroll-mt-2">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+      <div className="max-w-5xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
+          className="mb-14"
+        >
+          <h2 className="text-4xl uppercase font-bold text-white relative inline-block after:content-[''] after:absolute after:-bottom-2.5 after:left-1/2 after:-translate-x-1/2 after:w-[60px] after:h-1 after:bg-[var(--color-accent)] after:rounded-sm">
+            Projects
+          </h2>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -37,15 +49,24 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -10 }}
-              className="group relative bg-[var(--color-card-bg)] rounded-3xl overflow-hidden transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] text-left min-h-[450px] flex flex-col border border-[var(--color-border-color)] hover:border-[var(--color-accent)]"
+              whileHover={{ scale: 1.01 }}
+              className={`group relative rounded-3xl overflow-hidden transition-all duration-300 hover:shadow-xl flex flex-col border p-8 ${
+                index === 0 ? 'md:row-span-2' : ''
+              } ${
+                index === 2
+                  ? 'bg-[var(--color-accent)] border-transparent hover:border-black/20'
+                  : 'bg-[var(--color-card-bg)] border-[var(--color-border-color)] hover:border-[var(--color-accent)]'
+              }`}
             >
-              <div className="p-8 flex flex-col h-full relative z-10">
-                <h3 className="text-2xl font-medium text-white mb-4">{project.title}</h3>
-                <p className="text-[var(--color-text-light)] text-sm leading-relaxed flex-grow">
+              {index !== 2 && (
+                <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-[var(--color-accent)] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left rounded-t-3xl" />
+              )}
+              <div className="flex flex-col h-full relative z-10">
+                <h3 className={`text-2xl font-bold mb-4 ${index === 2 ? 'text-black' : 'text-white'}`}>{project.title}</h3>
+                <p className={`text-sm leading-relaxed flex-grow ${index === 2 ? 'text-black/80' : 'text-[var(--color-text-light)]'}`}>
                   {project.desc}
                 </p>
-                <div className="flex flex-col gap-3 mt-6">
+                <div className="flex flex-col gap-3 mt-8">
                   {project.links.map((link, i) => (
                     <a
                       key={i}
@@ -53,9 +74,15 @@ const Projects = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       download={link.download}
-                      className="inline-flex items-center text-white font-medium text-sm hover:text-[var(--color-accent)] transition-colors duration-300"
+                      className={`inline-flex items-center font-medium text-sm transition-colors duration-300 w-fit ${
+                        index === 2 ? 'text-black hover:text-black/70' : 'text-white hover:text-[var(--color-accent)]'
+                      }`}
                     >
-                      {link.text}
+                      <span className={`border-b pb-0.5 transition-colors ${
+                        index === 2 ? 'border-transparent hover:border-black/40' : 'border-transparent hover:border-[var(--color-accent)]'
+                      }`}>
+                        {link.text}
+                      </span>
                     </a>
                   ))}
                 </div>

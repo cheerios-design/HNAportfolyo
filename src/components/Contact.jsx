@@ -1,79 +1,112 @@
 import { motion } from 'framer-motion';
 import { FaLinkedin as Linkedin, FaGithub as Github, FaInstagram as Instagram, FaEnvelope as Mail } from 'react-icons/fa';
 
-const contacts = [
-  {
-    name: 'LinkedIn',
-    desc: 'Connect with me',
-    icon: Linkedin,
-    url: 'https://www.linkedin.com/in/nida-akdo%C4%9Fan-2b72b429a/'
-  },
-  {
-    name: 'GitHub',
-    desc: 'View my projects',
-    icon: Github,
-    url: 'https://github.com/nidakd'
-  },
-  {
-    name: 'Instagram',
-    desc: '@hnidakd',
-    icon: Instagram,
-    url: 'https://www.instagram.com/hnidakd/'
-  },
-  {
-    name: 'Email',
-    desc: 'hasibenidaakdogan@gmail.com',
-    icon: Mail,
-    url: 'mailto:hasibenidaakdogan@gmail.com'
-  }
-];
-
 const Contact = () => {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.55, delay: i * 0.1 }
+    })
+  };
+
   return (
     <section id="Contact" className="py-20 px-5 text-center bg-[var(--color-darker-bg)] relative scroll-mt-2">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
+          className="mb-14"
         >
-          <h2 className="text-4xl font-bold mb-4 text-white relative inline-block after:content-[''] after:absolute after:-bottom-2.5 after:left-1/2 after:-translate-x-1/2 after:w-[60px] after:h-1 after:bg-[var(--color-accent)] after:rounded-sm">
+          <h2 className="text-4xl uppercase font-bold mb-4 text-white relative inline-block after:content-[''] after:absolute after:-bottom-2.5 after:left-1/2 after:-translate-x-1/2 after:w-[60px] after:h-1 after:bg-[var(--color-accent)] after:rounded-sm">
             Get In Touch
           </h2>
-          <p className="text-[var(--color-text-light)] text-lg max-w-3xl mx-auto mt-6 mb-10">
-            Let's connect and collaborate
-          </p>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center gap-8 mt-10">
-          {contacts.map((contact, index) => {
-            const Icon = contact.icon;
-            return (
-              <motion.a
-                key={contact.name}
-                href={contact.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="flex items-center gap-4 bg-gradient-to-br from-[#071326] to-[#0b1d3a] text-white py-6 px-10 rounded-2xl shadow-md border border-[var(--color-accent)] transition-all duration-300 hover:shadow-xl hover:border-[var(--color-accent-light)] hover:from-[#071326] hover:to-[#10203d] no-underline"
-              >
-                <Icon size={32} />
-                <div className="text-left">
-                  <h3 className="text-lg font-semibold mb-1">{contact.name}</h3>
-                  <p className="text-sm opacity-90 m-0">{contact.desc}</p>
-                </div>
-              </motion.a>
-            );
-          })}
+        {/* Bento Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-[auto_auto] gap-4 text-left">
+
+          {/* LinkedIn — tall left */}
+          <motion.a
+            href="https://www.linkedin.com/in/nida-akdo%C4%9Fan-2b72b429a/"
+            target="_blank" rel="noopener noreferrer"
+            custom={0} variants={cardVariants}
+            initial="hidden" whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            whileHover={{ scale: 1.02 }}
+            className="col-span-1 row-span-2 flex flex-col justify-between bg-[var(--color-card-bg)] border border-[var(--color-border-color)] hover:border-[var(--color-accent)] rounded-3xl p-6 md:p-8 group transition-colors duration-300 no-underline min-h-[200px] md:min-h-[280px]"
+          >
+            <Linkedin size={36} className="text-[var(--color-accent)] group-hover:scale-110 transition-transform duration-300" />
+            <div className="mt-auto">
+              <p className="text-[var(--color-text-light)] text-xs mb-1 uppercase tracking-widest">Connect</p>
+              <h3 className="text-white text-2xl font-bold">LinkedIn</h3>
+            </div>
+          </motion.a>
+
+          {/* GitHub — wide top right */}
+          <motion.a
+            href="https://github.com/nidakd"
+            target="_blank" rel="noopener noreferrer"
+            custom={1} variants={cardVariants}
+            initial="hidden" whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            whileHover={{ scale: 1.02 }}
+            className="col-span-1 md:col-span-2 row-span-1 flex flex-col justify-between bg-[var(--color-card-bg)] border border-[var(--color-border-color)] hover:border-[var(--color-accent)] rounded-3xl p-6 group transition-colors duration-300 no-underline"
+          >
+            <Github size={32} className="text-[var(--color-accent)] group-hover:scale-110 transition-transform duration-300" />
+            <div className="mt-6">
+              <p className="text-[var(--color-text-light)] text-xs mb-1 uppercase tracking-widest">Open Source</p>
+              <h3 className="text-white text-xl font-bold">GitHub</h3>
+              <p className="text-[var(--color-text-light)] text-sm mt-1">@nidakd</p>
+            </div>
+          </motion.a>
+
+          {/* Instagram — top far right */}
+          <motion.a
+            href="https://www.instagram.com/hnidakd/"
+            target="_blank" rel="noopener noreferrer"
+            custom={2} variants={cardVariants}
+            initial="hidden" whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            whileHover={{ scale: 1.02 }}
+            className="col-span-1 row-span-1 flex flex-col justify-between bg-[var(--color-card-bg)] border border-[var(--color-border-color)] hover:border-[var(--color-accent)] rounded-3xl p-6 group transition-colors duration-300 no-underline"
+          >
+            <Instagram size={32} className="text-[var(--color-accent)] group-hover:scale-110 transition-transform duration-300" />
+            <div className="mt-6">
+              <p className="text-[var(--color-text-light)] text-xs mb-1 uppercase tracking-widest">Follow</p>
+              <h3 className="text-white text-xl font-bold">Instagram</h3>
+              <p className="text-[var(--color-text-light)] text-sm mt-1">@hnidakd</p>
+            </div>
+          </motion.a>
+
+          {/* Email — wide bottom, spans remaining 3 cols */}
+          <motion.a
+            href="mailto:hasibenidaakdogan@gmail.com"
+            custom={3} variants={cardVariants}
+            initial="hidden" whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            whileHover={{ scale: 1.02 }}
+            className="col-span-1 md:col-span-3 row-span-1 flex flex-col md:flex-row items-start md:items-center justify-between bg-[var(--color-accent)] rounded-3xl p-6 md:p-8 group transition-all duration-300 no-underline gap-4"
+          >
+            <div className="flex items-center gap-5">
+              <Mail size={36} className="text-black shrink-0 group-hover:scale-110 transition-transform duration-300" />
+              <div>
+                <p className="text-black/60 text-xs mb-0.5 uppercase tracking-widest font-medium">Email me</p>
+                <h3 className="text-black text-xl font-bold">hasibenidaakdogan@gmail.com</h3>
+              </div>
+            </div>
+            <span className="text-black font-semibold text-sm border border-black/30 rounded-full px-5 py-2 group-hover:bg-black group-hover:text-[var(--color-accent)] transition-colors duration-300 whitespace-nowrap">
+              Say hello →
+            </span>
+          </motion.a>
+
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(188,124,14,0.3)] to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[rgba(188,124,14,0.3)] to-transparent" />
     </section>
   );
 };

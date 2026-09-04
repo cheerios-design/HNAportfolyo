@@ -1,19 +1,58 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
+const HighlightText = ({ children, delay }) => (
+  <span className="relative inline-block px-2 py-0.5 mx-1 z-10 whitespace-nowrap">
+    <motion.span
+      className="absolute inset-0 bg-[var(--color-accent)] rounded-md z-[-1]"
+      initial={{ scaleX: 0 }}
+      whileInView={{ scaleX: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay, ease: "circOut" }}
+      style={{ originX: 0 }}
+    />
+    <motion.span
+      initial={{ color: "#ffffff" }}
+      whileInView={{ color: "#000000" }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: delay + 0.20 }}
+      style={{ display: "inline-block" }}
+    >
+      {children}
+    </motion.span>
+  </span>
+);
+
 const About = () => {
   return (
     <section id="About" className="py-24 px-6 lg:px-12 max-w-7xl mx-auto flex justify-end scroll-mt-2">
       <div className="w-full md:w-3/4 lg:w-2/3 space-y-8 text-left">
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl lg:text-5xl font-medium leading-tight text-white"
-        >
-          Combining mathematical thinking with software skills to solve problems analytically.
-        </motion.h2>
+        <h2 className="text-2xl md:text-3xl uppercase lg:text-4xl font-medium leading-tight text-white flex flex-col items-start gap-2 md:gap-3">
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: 0 }}
+          >
+            Combining <HighlightText delay={0.5}>mathematical thinking</HighlightText>
+          </motion.span>
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            with <HighlightText delay={0.9}>software skills</HighlightText> to solve problems
+          </motion.span>
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            <HighlightText delay={1.3}>analytically</HighlightText>.
+          </motion.span>
+        </h2>
 
         <div className="space-y-4">
           <motion.p

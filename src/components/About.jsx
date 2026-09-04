@@ -25,8 +25,9 @@ const HighlightText = ({ children, delay }) => (
 
 const About = () => {
   return (
-    <section id="About" className="py-24 px-6 lg:px-12 max-w-7xl mx-auto flex justify-end scroll-mt-2">
-      <div className="w-full md:w-3/4 lg:w-2/3 space-y-8 text-left">
+    <section id="About" className="py-24 px-6 lg:px-12 max-w-7xl mx-auto flex flex-col gap-12 md:gap-16 scroll-mt-2">
+      {/* Heading on the left */}
+      <div className="w-full md:w-3/4 lg:w-2/3 text-left">
         <h2 className="text-2xl md:text-3xl uppercase lg:text-4xl font-medium leading-tight text-white flex flex-col items-start gap-2 md:gap-3">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
@@ -53,8 +54,12 @@ const About = () => {
             <HighlightText delay={1.3}>analytically</HighlightText>.
           </motion.span>
         </h2>
+      </div>
 
-        <div className="space-y-4">
+      {/* Body on the right */}
+      <div className="w-full flex justify-end">
+        <div className="w-full md:w-3/4 lg:w-1/2 space-y-8 text-left">
+          <div className="space-y-4">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -106,6 +111,7 @@ const About = () => {
             Let's connect
           </a>
         </motion.div>
+        </div>
       </div>
     </section>
   );

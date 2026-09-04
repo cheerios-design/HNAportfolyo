@@ -1,13 +1,12 @@
 import { motion } from 'framer-motion';
-import { Code, Laptop, Database, Box, Calculator, Users } from 'lucide-react';
+import { BiLogoPython, BiLogoReact, BiLogoPostgresql, BiCube, BiData } from 'react-icons/bi';
 
 const skills = [
-  { name: 'Python', icon: Code },
-  { name: 'React', icon: Laptop },
-  { name: 'PostgreSQL', icon: Database },
-  { name: 'VTK & Vedo', icon: Box },
-  { name: 'Data Analysis', icon: Calculator },
-  { name: 'Leadership', icon: Users },
+  { name: 'Python', icon: BiLogoPython },
+  { name: 'React', icon: BiLogoReact },
+  { name: 'PostgreSQL', icon: BiLogoPostgresql },
+  { name: 'VTK & Vedo', icon: BiCube },
+  { name: 'Data Analysis', icon: BiData },
 ];
 
 const SkillMarquee = () => {
@@ -30,10 +29,10 @@ const SkillMarquee = () => {
         {duplicatedSkills.map((skill, index) => (
           <div
             key={index}
-            className="flex items-center gap-3 px-8 text-xl font-bold tracking-wide text-[#666666] shrink-0"
+            className="flex items-center px-12 text-[#666666] hover:text-[var(--color-accent)] transition-colors cursor-pointer shrink-0"
+            title={skill.name}
           >
-            <skill.icon className="w-6 h-6" />
-            {skill.name}
+            <skill.icon className="w-14 h-14" />
           </div>
         ))}
       </motion.div>

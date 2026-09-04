@@ -15,6 +15,9 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-dark-bg text-white font-sans;
   }
